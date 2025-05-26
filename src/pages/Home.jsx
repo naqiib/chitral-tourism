@@ -1,5 +1,8 @@
 import React from 'react';
 import PlaceCard from '../components/PlaceCard';
+import CustomerReviews from '../components/CustomerReviews';
+
+
 
 import chitral1 from '../assets/images/chitral1.jpg';
 import chitral2 from '../assets/images/chitral2.jpg';
@@ -63,33 +66,34 @@ const Home = () => {
   return (
     <div className="bg-white min-h-screen">
       {/* Hero Section with Video */}
-      <div className="relative h-[80vh] w-full overflow-hidden">
-        <video
-          src={videoClip}
-          autoPlay
-          loop
-          muted
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
-        />
-        <div className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-80 z-10 flex items-center justify-center">
-          <div className="text-center text-gray-900 px-4">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-[#1D4ED8]">
-              Explore the Beauty of Chitral
-            </h1>
-            <p className="text-lg mb-6 max-w-2xl mx-auto text-gray-700">
-              Discover scenic valleys, rich culture, and amazing festivals in the heart of the Hindu Kush mountains.
-            </p>
-            <div className="flex gap-4 justify-center flex-wrap">
-              <button className="bg-[#1D4ED8] hover:bg-[#1a43b8] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-                Explore Places
-              </button>
-              <button className="bg-transparent hover:bg-[#1D4ED8] hover:bg-opacity-10 text-[#1D4ED8] font-bold py-3 px-8 rounded-full border-2 border-[#1D4ED8] transition-all duration-300 hover:scale-105">
-                View Festivals
-              </button>
-            </div>
-          </div>
-        </div>
+     {/* Hero Section with Video - Removed white overlay */}
+<div className="relative h-[80vh] w-full overflow-hidden">
+  <video
+    src={videoClip}
+    autoPlay
+    loop
+    muted
+    className="absolute top-0 left-0 w-full h-full object-cover z-0"
+  />
+  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10 flex items-center justify-center">
+    <div className="text-center text-white px-4">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-white">
+        Explore the Beauty of Chitral
+      </h1>
+      <p className="text-lg mb-6 max-w-2xl mx-auto text-white">
+        Discover scenic valleys, rich culture, and amazing festivals in the heart of the Hindu Kush mountains.
+      </p>
+      <div className="flex gap-4 justify-center flex-wrap">
+        <button className="bg-[#1D4ED8] hover:bg-[#1a43b8] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
+          Explore Places
+        </button>
+        <button className="bg-transparent hover:bg-white hover:bg-opacity-20 text-white font-bold py-3 px-8 rounded-full border-2 border-white transition-all duration-300 hover:scale-105">
+          View Festivals
+        </button>
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Most Popular Places Section */}
       <section className="py-16 px-4 bg-white">
@@ -138,6 +142,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <CustomerReviews />
+   
     </div>
   );
 };

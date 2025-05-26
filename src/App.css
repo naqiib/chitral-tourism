@@ -1,38 +1,20 @@
-.App {
-  text-align: center;
+/* Add this to your global CSS */
+nav li {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav li:hover span {
+  width: 25% !important;
+  height: 2px !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav li.active span {
+  width: 100% !important;
+  height: 50% !important;
+  background-color: #5a1d7a;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom cubic-bezier timing function */
+.ease-in-out-cubic {
+  transition-timing-function: cubic-bezier(0.4, -1, 0.2, -1);
 }
