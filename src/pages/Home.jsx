@@ -96,29 +96,52 @@ const Home = () => {
   />
 
   {/* Form positioned at bottom */}
-  <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-4xl px-4">
-    <div className="bg-white bg-opacity-60 backdrop-blur-md p-4 md:p-6 rounded-lg text-black shadow-xl border border-white border-opacity-30">
-      <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center font-serif text-[#1D4ED8]">
-        Let’s Discover Pakistan with Guide To Pakistan!
-      </h2>
-      <form className="grid grid-cols-1 md:grid-cols-3 gap-3 text-sm">
-        <input type="text" placeholder="Your name" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <input type="email" placeholder="Your email" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <input type="tel" placeholder="Phone Number" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <input type="number" placeholder="Total Participants" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <input type="text" placeholder="Destination" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <input type="date" className="px-3 py-1.5 rounded border border-gray-300 bg-white bg-opacity-70 outline-none" />
-        <div className="md:col-span-3">
-          <button
-            type="submit"
-            className="w-full bg-[#1D4ED8] hover:bg-[#1a43b8] text-white py-2 rounded-lg font-medium transition duration-300"
-          >
-            Send Message
-          </button>
-        </div>
-      </form>
-    </div>
+ <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 w-full max-w-3xl px-4"> {/* Changed max-w-4xl to max-w-3xl */}
+  <div className="bg-white bg-opacity-60 backdrop-blur-md p-3 md:p-4 rounded-lg text-black shadow-xl border border-white border-opacity-30"> {/* Reduced padding */}
+    <h2 className="text-xl md:text-2xl font-bold mb-3 text-center font-serif text-[#1D4ED8]"> {/* Smaller text */}
+      Let's Discover Pakistan!
+    </h2>
+    <form className="grid grid-cols-1 md:grid-cols-3 gap-2 text-xs"> {/* Smaller gap and text */}
+      <input 
+        type="text" 
+        placeholder="Your name" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <input 
+        type="email" 
+        placeholder="Your email" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <input 
+        type="tel" 
+        placeholder="Phone" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <input 
+        type="number" 
+        placeholder="Participants" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <input 
+        type="text" 
+        placeholder="Destination" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <input 
+        type="date" 
+        className="px-2 py-1 rounded border border-gray-300 bg-white bg-opacity-70 outline-none text-sm" 
+      />
+      <div className="md:col-span-3">
+        <button
+          type="submit"
+          className="w-full bg-[#1D4ED8] hover:bg-[#1a43b8] text-white py-1.5 rounded-lg font-medium transition duration-300 text-sm"
+        >
+          Send Message
+        </button>
+      </div>
+    </form>
   </div>
+</div>
 </div>
 </div>
 </div>
