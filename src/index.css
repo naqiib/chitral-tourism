@@ -11,3 +11,11 @@
     @apply after:w-full;
   }
 }
+@layer utilities {
+  .transform-style-preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .perspective-500 {
+    perspective: 500px;
+  }
+}

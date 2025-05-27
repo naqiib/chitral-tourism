@@ -9,6 +9,7 @@ module.exports = {
         serif: ['"Playfair Display"', 'serif'],
         montserrat: ['Montserrat', 'sans-serif']
       },
+      
       writingMode: {
         'vertical-rl': 'vertical-rl',
       },

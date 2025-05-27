@@ -75,24 +75,72 @@ const Home = () => {
     muted
     className="absolute top-0 left-0 w-full h-full object-cover z-0"
   />
-  <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 z-10 flex items-center justify-center">
-    <div className="text-center text-white px-4">
-      <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif text-white">
-        Explore the Beauty of Chitral
-      </h1>
-      <p className="text-lg mb-6 max-w-2xl mx-auto text-white">
-        Discover scenic valleys, rich culture, and amazing festivals in the heart of the Hindu Kush mountains.
-      </p>
-      <div className="flex gap-4 justify-center flex-wrap">
-        <button className="bg-[#1D4ED8] hover:bg-[#1a43b8] text-white font-bold py-3 px-8 rounded-full transition-all duration-300 hover:scale-105 shadow-lg">
-          Explore Places
-        </button>
-        <button className="bg-transparent hover:bg-white hover:bg-opacity-20 text-white font-bold py-3 px-8 rounded-full border-2 border-white transition-all duration-300 hover:scale-105">
-          View Festivals
+ 
+
+ <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20 z-10 flex items-center justify-center">
+  <div className="bg-white bg-opacity-70 backdrop-blur-sm p-4 md:p-6 rounded-lg w-full max-w-4xl text-black shadow-xl border border-white border-opacity-30">
+    <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center font-serif text-[#1D4ED8]">
+      Let’s Discover Pakistan with Guide To Pakistan!
+    </h2>
+    <form className="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Name</label>
+        <input
+          type="text"
+          placeholder="Your name"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Email</label>
+        <input
+          type="email"
+          placeholder="Your email"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Phone</label>
+        <input
+          type="tel"
+          placeholder="Phone Number"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Participants</label>
+        <input
+          type="number"
+          placeholder="Total"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Destination</label>
+        <input
+          type="text"
+          placeholder="Destination"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="flex flex-col">
+        <label className="text-xs mb-1 font-medium">Date</label>
+        <input
+          type="date"
+          className="px-3 py-1.5 rounded border border-gray-300 outline-none text-sm bg-white bg-opacity-70"
+        />
+      </div>
+      <div className="md:col-span-3 mt-2">
+        <button
+          type="submit"
+          className="w-full bg-[#1D4ED8] hover:bg-[#1a43b8] text-white py-2 rounded-lg font-medium transition duration-300 text-sm"
+        >
+          Book Now
         </button>
       </div>
-    </div>
+    </form>
   </div>
+</div>
 </div>
 
       {/* Most Popular Places Section */}
