@@ -15,34 +15,36 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const navItems = [
+    { path: "/", name: "Home" },
+    { path: "/about", name: "About" },
+    { path: "/destinations", name: "Destinations" },
+    { path: "/services", name: "Services" },
+    { path: "/contact", name: "Contact" }
+  ];
+
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled ? 'bg-gradient-to-b from-[#1D4ED8]/90 to-[#1D4ED8]/70 py-2' : 'bg-transparent py-4'
-    }`}>
+    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled ? 'backdrop-blur-md bg-[#1D4ED8]/60 py-2 shadow-lg' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center">
-          {/* Brand/Logo */}
+          {/* Logo */}
           <Link 
             to="/" 
-            className="text-white text-2xl font-bold uppercase tracking-wider hover:text-white/80 transition-colors"
+            className="text-white text-2xl font-bold uppercase tracking-widest hover:text-white/80"
           >
             Chitral
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {[
-              { path: "/", name: "Home" },
-              { path: "/about", name: "About" },
-              { path: "/destinations", name: "Destinations" },
-              { path: "/services", name: "Services" },
-              { path: "/contact", name: "Contact" }
-            ].map((item, index) => (
+          <div className="hidden lg:flex items-center space-x-4">
+            {navItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className={`text-white px-3 py-2 uppercase text-sm font-medium hover:text-white/80 transition-colors ${
-                  location.pathname === item.path ? 'text-white font-semibold underline' : 'text-white/80'
+                className={`px-4 py-2 rounded-full text-sm uppercase font-medium transition duration-300 ${
+                  location.pathname === item.path
+                    ? 'bg-white text-[#1D4ED8]'
+                    : 'text-white hover:bg-white/20'
                 }`}
               >
                 {item.name}
@@ -50,35 +52,29 @@ const Navbar = () => {
             ))}
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Hamburger */}
           <button
             className="lg:hidden focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
-            <div className="w-6 flex flex-col space-y-1.5">
-              <span className={`h-0.5 bg-white transition-all ${isOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`h-0.5 bg-white transition-all ${isOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`h-0.5 bg-white transition-all ${isOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            <div className="space-y-1.5">
+              <span className={`block h-0.5 w-6 bg-white transform transition ${isOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
+              <span className={`block h-0.5 w-6 bg-white transition ${isOpen ? 'opacity-0' : 'opacity-100'}`} />
+              <span className={`block h-0.5 w-6 bg-white transform transition ${isOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
             </div>
           </button>
         </div>
 
         {/* Mobile Menu */}
-        <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} transition-all duration-300`}>
+        <div className={`lg:hidden transition-all duration-300 ${isOpen ? 'block' : 'hidden'}`}>
           <div className="pt-4 pb-2 space-y-2">
-            {[
-              { path: "/", name: "Home" },
-              { path: "/about", name: "About" },
-              { path: "/destinations", name: "Destinations" },
-              { path: "/services", name: "Services" },
-              { path: "/contact", name: "Contact" }
-            ].map((item, index) => (
+            {navItems.map((item, index) => (
               <Link
                 key={index}
                 to={item.path}
-                className={`block px-3 py-2 text-white uppercase text-sm font-medium hover:bg-white/10 rounded transition-colors ${
-                  location.pathname === item.path ? 'bg-white/20' : ''
+                className={`block px-4 py-2 rounded text-white text-sm uppercase transition ${
+                  location.pathname === item.path ? 'bg-white/20 font-semibold' : 'hover:bg-white/10'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
