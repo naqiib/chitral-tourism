@@ -21,7 +21,7 @@ const Navbar = () => {
     { path: "/about", name: "About" },
     { path: "/destinations", name: "Destinations" },
     { path: "/services", name: "Services" },
-    { path: "/contact", name: "Contact" }
+    { path: "/contact", name: "ContactUs" }
   ];
 
   // Define base padding for links

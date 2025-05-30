@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs';
 import BlogSection from './components/BlogSection';
 import GallerySection from './components/Sections';
 import ServicesSection from './components/ServicesSection';
+import ContactUs from './components/ContactUs';
+import Destination from './components/Destination';
 
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
         } />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/services" element={<ServicesSection />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/destinations" element={<Destination />} />
        
 
       </Routes>
