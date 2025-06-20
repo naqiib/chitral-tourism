@@ -1,0 +1,163 @@
+/* src/CardStyles.css */
+.card {
+  position: relative;
+  background: transparent;
+  width: 480px; /* Increased from 380px */
+  height: 480px; /* Increased from 380px */
+  border: none;
+}
+
+.card .container-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e7e7e7;
+  width: 300px; /* Increased from 240px */
+  height: 300px; /* Increased from 240px */
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 4px 1px #1818183d, 3px 3px 4px #18181865, inset 3px 3px 3px #ffffff; /* Slightly increased shadow */
+  transition: all .3s ease-in-out, opacity .3s;
+  transition-delay: .6s, 0s;
+}
+
+.card:hover .container-image {
+  opacity: 0;
+  border-radius: 10px; /* Slightly increased */
+  transition-delay: 0s, .6s;
+}
+
+.card .container-image .image-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px; /* Increased from 160px */
+  height: 200px; /* Increased from 160px */
+  object-fit: cover;
+  border-radius: 50%;
+  filter: drop-shadow(3px 3px 3px #1818188a); /* Slightly increased shadow */
+  transition: all .3s ease-in-out;
+  transition-delay: .4s;
+}
+
+.card:hover .container-image .image-circle {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.card .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #e7e7e7;
+  padding: 25px; /* Increased padding */
+  width: 300px; /* Increased from 240px, matches container-image */
+  height: 300px; /* Increased from 240px, matches container-image */
+  cursor: pointer;
+  border: none;
+  border-radius: 10px; /* Slightly increased */
+  box-shadow: 0 0 4px 1px #1818183d, 3px 3px 4px #18181865, inset 3px 3px 3px #ffffff;
+  visibility: hidden;
+  opacity: 0;
+  transition: width .3s ease-in-out, height .3s ease-in-out, opacity .3s ease-in-out, visibility .0s ease-in-out .3s;
+  transition-delay: 0s;
+  z-index: 1;
+}
+
+.card:hover .content {
+  width: 460px; /* Increased from 360px, almost full card width */
+  height: 300px; /* Increased from 240px */
+  visibility: visible;
+  opacity: 1;
+  transition: width .3s ease-in-out .5s, height .3s ease-in-out .5s, opacity .3s ease-in-out .5s, visibility .0s ease-in-out .5s;
+}
+
+.card .content .detail {
+  display: flex;
+  flex-direction: column;
+  width: 55%; /* Keeping relative width, so it scales with content width */
+  height: 100%;
+  opacity: 0;
+  color: #181818;
+  transition: opacity .5s ease-in-out;
+  transition-delay: 0s;
+}
+
+.card:hover .content .detail {
+  opacity: 1;
+  transition-delay: .7s;
+}
+
+.card .content .detail span {
+  margin-bottom: 12px; /* Increased margin */
+  font-size: 20px; /* Increased font size */
+  font-weight: 800; /* Made bolder */
+  line-height: 1.35;
+}
+.card .content .detail span.price {
+  font-size: 18px; /* Increased font size */
+  font-weight: 600; /* Made bolder */
+  color: #2c2c2c; /* Slightly darker */
+}
+
+
+.card .content .detail button {
+  background: #1D4ED8;
+  margin-top: auto;
+  padding: 12px 20px; /* Increased padding */
+  width: auto;
+  min-width: 150px; /* Increased min-width */
+  height: auto;
+  color: #ffffff;
+  font-size: 15px; /* Increased font size */
+  font-weight: 700; /* Bolder */
+  border: none;
+  border-radius: 8px; /* Slightly more rounded */
+  transition: background-color .3s ease-in-out;
+  cursor: pointer;
+}
+
+.card .content .detail button:hover {
+  background: #173faf;
+}
+
+.card .content .product-image {
+  position: relative;
+  width: 40%; /* Keeping relative width */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .content .product-image .box-image {
+  display: flex;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+  opacity: 0;
+  transform: scale(.5) translateX(25px); /* Slightly increased translateX */
+  transition: all .5s ease-in-out;
+  transition-delay: 0s;
+}
+
+.card:hover .content .product-image .box-image {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+  transition-delay: .6s;
+}
+
+.card .content .product-image .box-image .img-product {
+  margin: auto;
+  width: 100%;
+  max-width: 180px; /* Increased from 150px */
+  height: auto;
+  object-fit: contain;
+}
