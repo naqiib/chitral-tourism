@@ -32,7 +32,7 @@ const Home = () => {
     const destinationOptions = [
         "Gilgit",
         "Hunza",
-        "Skardu",
+        "Sakardu",
         "Chitral",
         "Kalash Valley"
     ];

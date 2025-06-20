@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaPaperPlane } from 'react-icons/fa';
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +32,14 @@ const ContactPage = () => {
     });
   };
 
+  const sendWhatsAppMessage = () => {
+    const { name, email, phone, subject, message } = formData;
+    const whatsappMessage = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nSubject: ${subject}\nMessage: ${message}`;
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappUrl = `https://wa.me/923075764607?text=${encodedMessage}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   return (
     <section className="py-16 px-4 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -62,8 +70,8 @@ const ContactPage = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-gray-800">Phone Number</h4>
-                    <p className="text-gray-600">+92 123 4567890</p>
-                    <p className="text-gray-600">+92 987 6543210</p>
+                    <p className="text-gray-600">+92 3075764607</p>
+                    <p className="text-gray-600">+92 3075764607</p>
                   </div>
                 </div>
 
@@ -177,13 +185,25 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
-              <button
-                type="submit"
-                className="bg-[#1D4ED8] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1a3fb7] transition duration-300 flex items-center justify-center"
-              >
-                <FaPaperPlane className="mr-2" />
-                Send Message
-              </button>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <button
+                  type="submit"
+                  className="bg-[#1D4ED8] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1a3fb7] transition duration-300 flex items-center justify-center flex-1"
+                >
+                  <FaPaperPlane className="mr-2" />
+                  Send Message
+                </button>
+                
+                <button
+                  type="button"
+                  onClick={sendWhatsAppMessage}
+                  className="bg-[#25D366] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#1da851] transition duration-300 flex items-center justify-center flex-1"
+                  disabled={!formData.message}
+                >
+                  <FaWhatsapp className="mr-2 text-xl" />
+                  WhatsApp Us
+                </button>
+              </div>
             </form>
           </div>
         </div>
